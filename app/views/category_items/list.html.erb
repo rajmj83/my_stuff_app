@@ -1,0 +1,35 @@
+<%= link_to("<< Back to Menu", {:controller => 'mystuff', :action => 'menu'}, :class => 'back-link') %>
+
+<div class="My Menu">
+	
+<h2>Categories Items List</h2>
+<br>
+<br>
+
+<table>
+<tr>
+  <th>Category Name</th>
+  <th>Address</th>
+  <th>Phone</th>
+  <th>Notes</th>
+  <th>Actions</th>
+</tr>
+<% @catitems.each do |catitem| %>
+<tr>
+  <td><%= catitem.name %></td>
+  <td><%= catitem.address %></td>
+  <td><%= catitem.phonenumber %></td>
+  <td><%= catitem.notes %></td>
+
+  <td class="actions">
+    <%= link_to("Edit", {:action => 'edit', :id => catitem.id}, :class => 'action edit') %>
+  </td>
+
+
+</tr>
+<% end %>
+</table>
+
+<li><%= link_to("Logout", :controller => 'mystuff', :action => 'logout') %></li>
+
+</div>

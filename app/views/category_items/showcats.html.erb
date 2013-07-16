@@ -1,0 +1,19 @@
+<%= link_to("<< Back to Menu", {:controller => 'mystuff', :action => 'menu'}, :class => 'back-link') %>
+
+<div class="My Menu">
+	
+<h2>Categories List</h2>
+Please chose from the below categories to add more . <br>
+<br>
+
+  <table border="1" class="listing">
+    <tr class="header">
+      <th>Category</th>
+    </tr>
+    <% @categories.each do |category| %>
+      <td><%= category.name %></td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

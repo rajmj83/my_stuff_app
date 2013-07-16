@@ -1,0 +1,18 @@
+<% @the_web_page_title = "Edit category: #{@categoryitem.name}" %>
+<%= link_to("<< Back to List", {:action => 'list', :id => session[:user_id]}, :class => 'back-link') %>
+
+<div class="subject edit">
+  <h2>Edit Category Item</h2>
+
+<%= "You are editing the category name : #{@categoryitem.name}"%>
+
+  <%= form_for(:category_items, :url => {:action => 'update', :id => @categoryitem.id}) do |f| %>
+  
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Category Item") %>
+    </div>
+    
+  <% end %>
+</div>

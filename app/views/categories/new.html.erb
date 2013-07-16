@@ -1,0 +1,19 @@
+<% @the_web_page_title = "Create Category" %>
+
+<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <h2>Create Category</h2>
+
+<%= "You are adding the category number : #{@category_count}"%>
+
+  <%= form_for(:category, :url => {:action => 'create'}) do |f| %>
+  
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Create Category") %>
+    </div>
+   
+  <% end %>
+</div>
