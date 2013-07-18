@@ -29,7 +29,8 @@ MyWebapp::Application.routes.draw do
 
   #get "access/menu"
 
-  root :to => "demo#index"
+  #root :to => "demo#index"
+  root :to => 'access#menu'
   match 'admin', :to => 'access#menu'
   
   #get "demo/index"
